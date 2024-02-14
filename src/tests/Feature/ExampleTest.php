@@ -20,7 +20,7 @@ class ExampleTest extends TestCase
     }
 
     /** @test */
-    public function これはテストです()
+    public function これはテストです。()
     {
         $this->assertTrue(true);
     }
