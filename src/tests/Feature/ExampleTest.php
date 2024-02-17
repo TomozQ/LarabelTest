@@ -7,6 +7,14 @@ use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+    public $user;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->user = 'hoge';
+    }
+
     /**
      * A basic test example.
      *
@@ -15,6 +23,8 @@ class ExampleTest extends TestCase
     public function test_the_application_returns_a_successful_response()
     {
         // 準備
+        // $this->seed(XXXSeeder::class);
+        dump($this->user);
 
         // 実行
         $response = $this->get('/');
@@ -23,9 +33,16 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
-    public function これはテストです。()
+    public function test_the_application_returns_a_successful_response2()
     {
-        $this->assertTrue(true);
+        // 準備
+        dump($this->user);
+
+        // 実行
+        $response = $this->get('/');
+
+        // 検証
+        $response->assertStatus(200);
     }
+
 }
