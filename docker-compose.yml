@@ -25,6 +25,19 @@ services:
       - 3306:3306
     command: "mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
     volumes:
+      - mysql_dev:/var/lib/mysql
+  testdb:
+    image: "mysql:latest"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MASQL_DATABASE: mysqltest
+      TZ: 'Asia/Tokyo'
+    restart: always
+    ports:
+      - 3307:3307
+    command: "mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
+    volumes:
       - mysql_test:/var/lib/mysql
 volumes:
+  mysql_dev:
   mysql_test:
