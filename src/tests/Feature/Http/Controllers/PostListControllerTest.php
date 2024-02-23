@@ -12,6 +12,6 @@ class PostListControllerTest extends TestCase
    function blog_list_display()
    {
         $this->get('/')
-            ->assertOk();
+             ->assertOk();
    }
 }

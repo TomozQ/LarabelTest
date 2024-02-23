@@ -8,6 +8,6 @@ class PostListController extends Controller
 {
     public function index()
     {
-        
+
     }
 }
