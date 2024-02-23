@@ -21,7 +21,9 @@ class ExampleTest extends TestCase
     public function test_the_application_returns_a_successful_response()
     {
         // 準備
-        User::factory()->create();
+        $user = User::factory()->create();
+
+        dump($user->id);
 
         // 実行
         $response = $this->get('/');
@@ -33,7 +35,9 @@ class ExampleTest extends TestCase
     public function test_the_application_returns_a_successful_response2()
     {
         // 準備
-        User::factory()->create();
+        $user = User::factory()->create();
+
+        dump($user->id);
 
         // 実行
         $response = $this->get('/');
