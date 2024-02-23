@@ -2,18 +2,16 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 // use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public $user;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->user = 'hoge';
-    }
 
     /**
      * A basic test example.
@@ -23,8 +21,7 @@ class ExampleTest extends TestCase
     public function test_the_application_returns_a_successful_response()
     {
         // 準備
-        // $this->seed(XXXSeeder::class);
-        dump($this->user);
+        User::factory()->create();
 
         // 実行
         $response = $this->get('/');
@@ -36,7 +33,7 @@ class ExampleTest extends TestCase
     public function test_the_application_returns_a_successful_response2()
     {
         // 準備
-        dump($this->user);
+        User::factory()->create();
 
         // 実行
         $response = $this->get('/');

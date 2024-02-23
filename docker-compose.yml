@@ -18,7 +18,7 @@ services:
     image: "mysql:latest"
     environment:
       MYSQL_ROOT_PASSWORD: mysql
-      MASQL_DATABASE: mysql
+      MYSQL_DATABASE: mysql
       TZ: 'Asia/Tokyo'
     restart: always
     ports:
@@ -30,11 +30,11 @@ services:
     image: "mysql:latest"
     environment:
       MYSQL_ROOT_PASSWORD: mysql
-      MASQL_DATABASE: mysqltest
+      MYSQL_DATABASE: mysqltest
       TZ: 'Asia/Tokyo'
     restart: always
     ports:
-      - 3307:3307
+      - 3307:3306
     command: "mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
     volumes:
       - mysql_test:/var/lib/mysql
